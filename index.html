@@ -57,42 +57,18 @@
             background-color: #45a049;
             transform: translateY(-3px);
         }
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Version Chooser</h1>
-        <button id="btn_1_8_8" class="btn" onclick="redirectToGoogle()">1.8.8</button>
-        <button id="btn_beta_1_7_3" class="btn" onclick="redirectToGoogle()">Beta 1.7.3</button>
-        <button id="btn_1_5_2" class="btn" onclick="redirectToGoogle()">1.5.2</button>
+        <a href="/1.8.8/" class="btn"><span>1.8.8</span></a>
+        <a href="/Beta_1.7.3/" class="btn"><span>Beta 1.7.3</span></a>
+        <a href="/1.5.2/" class="btn"><span>1.5.2</span></a>
     </div>
-
-    <script>
-        // Function to redirect to Google.com
-        function redirectToGoogle() {
-            var currentTime = new Date();
-            var hours = currentTime.getHours();
-            var minutes = currentTime.getMinutes();
-            var totalMinutes = hours * 60 + minutes;
-
-            // Define the time ranges in minutes
-            var range1_start = 8 * 60;
-            var range1_end = 10 * 60 + 8;
-            var range2_start = 10 * 60 + 23;
-            var range2_end = 12 * 60 + 19;
-            var range3_start = 13 * 60;
-            var range3_end = 15 * 60;
-            var range4_start = 19 * 60 + 40;
-            var range4_end = 20 * 60;
-
-            // Check if current time falls within any of the specified ranges
-            if ((totalMinutes >= range1_start && totalMinutes <= range1_end) ||
-                (totalMinutes >= range2_start && totalMinutes <= range2_end) ||
-                (totalMinutes >= range3_start && totalMinutes <= range3_end) ||
-                (totalMinutes >= range4_start && totalMinutes <= range4_end)) {
-                window.location.href = "https://www.google.com"; // Redirect to Google.com
-            }
-        }
-    </script>
 </body>
 </html>
