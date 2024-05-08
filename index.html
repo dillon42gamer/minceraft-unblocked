@@ -4,6 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Version Chooser</title>
+       <script>
+        function checkTime() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var totalMinutes = hours * 60 + minutes;
+
+            // Define the time ranges in minutes
+            var range1_start = 8 * 60;
+            var range1_end = 10 * 60 + 8;
+            var range2_start = 10 * 60 + 23;
+            var range2_end = 12 * 60 + 19;
+            var range3_start = 13 * 60;
+            var range3_end = 15 * 60;
+
+            // Check if current time falls within any of the specified ranges
+            if ((totalMinutes >= range1_start && totalMinutes <= range1_end) ||
+                (totalMinutes >= range2_start && totalMinutes <= range2_end) ||
+                (totalMinutes >= range3_start && totalMinutes <= range3_end)) {
+                var pin = prompt("Please enter the PIN to proceed:", "");
+                if (pin !== "9346") {
+                    alert("Incorrect PIN. Access denied.");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+<body onload="checkTime()">
+    <h1>Welcome</h1>
+    <p>You are playing during school hours. enter the pin (which no one knows) to continue</p>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,7 +94,9 @@
         }
     </style>
 </head>
-<body>
+<body onload="checkTime()">
+    <h1>Welcome</h1>
+    <p>You are playing during school hours. enter the pin (which no one knows) to continue</p>
     <div class="container">
         <h1>Version Chooser</h1>
         <a href="/1.8.8/" class="btn"><span>1.8.8</span></a>
